@@ -14,7 +14,7 @@ defmodule Pump.Metrics.OSMon do
 
     disk_data = :disksup.get_disk_data()
     total_sizes = for {id, total_size, _} <- disk_data, do: {id, total_size}
-    capacities = for {id, _, capacity} <- disk_data, do: {id, capacity}
+    # capacities = for {id, _, capacity} <- disk_data, do: {id, capacity}
 
     {_, allocated_memory, _} = :memsup.get_memory_data()
 
@@ -30,7 +30,7 @@ defmodule Pump.Metrics.OSMon do
         {"erlang_cpu_sup_avg", [], [avg1: avg1, avg5: avg5, avg15: avg15, avg_util: avg_util]},
         {"erlang_cpu_sup_util", [], busy ++ non_busy},
         {"erlang_disk_sup_total_size", [], total_sizes},
-        {"erlang_disk_sup_capacity", [], capacities},
+        # {"erlang_disk_sup_capacity", [], capacities},
         {"erlang_mem_sup_allocated_memory", [], allocated_memory}
       ]
   end
