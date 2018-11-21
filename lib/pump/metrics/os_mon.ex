@@ -12,7 +12,7 @@ defmodule Pump.Metrics.OSMon do
 
     # http://erlang.org/doc/man/disksup.html
 
-    disk_data = :disksup.get_disk_data()
+    # disk_data = :disksup.get_disk_data()
     # total_sizes = for {id, total_size, _} <- disk_data, do: {id, total_size}
     # capacities = for {id, _, capacity} <- disk_data, do: {id, capacity}
 
