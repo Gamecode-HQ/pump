@@ -3,7 +3,7 @@ defmodule Pump do
 
   require Logger
 
-  alias Pump.Metrics.{OSMon, VMMemory, VMStatistics, VMSystemInfo}
+  alias Pump.Metrics.{OSMon, VMMemory, VMStatistics, VMSystemInfo, GPUBusy}
   alias Pump.InfluxDBWriter
 
   def send_stats(pid, stats), do: send(pid, {:send_stats, stats})
