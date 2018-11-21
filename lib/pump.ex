@@ -50,7 +50,7 @@ defmodule Pump do
   end
 
   defp gather_stats() do
-    VMMemory.metrics() ++ VMStatistics.metrics() ++ VMSystemInfo.metrics() ++ OSMon.metrics()
+    VMMemory.metrics() ++ VMStatistics.metrics() ++ VMSystemInfo.metrics() ++ OSMon.metrics() ++ GPUBusy.metrics()
   end
 
   defp get_device_id do
