@@ -5,7 +5,7 @@ defmodule Pump.Metrics.GPUBusy do
 
   def metrics() do
     gpu = case File.read("/sys/class/drm/card0/device/gpu_busy_percent") do
-      {:ok, data} -> data |> String.strip |> String.to_integer
+      {:ok, data} -> data |> String.trim |> String.to_integer
       _ -> 0
     end
 
