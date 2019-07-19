@@ -37,8 +37,8 @@ int main()
     struct amdgpu_bo_alloc_request request = {};
     struct amdgpu_heap_info heapInfo = {};
     int fd = open("/dev/dri/card0", O_RDWR);
-    uint32_t version1 = 2;
-    uint32_t version2 = 2;
+    uint32_t version1 = 0;
+    uint32_t version2 = 0;
     int err = amdgpu_device_initialize(fd, &version1, &version2, &device);
     if (err)
     {
