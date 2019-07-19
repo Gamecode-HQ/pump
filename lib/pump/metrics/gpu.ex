@@ -1,5 +1,4 @@
 defmodule Pump.Metrics.GPU do
-  use GenServer
   require Logger
 
   def metrics do
