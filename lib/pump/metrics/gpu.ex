@@ -13,7 +13,7 @@ defmodule Pump.Metrics.GPU do
         end
       end)
     else
-        []
+      []
     end
   end
 
