@@ -7,7 +7,9 @@ defmodule Pump.MixProject do
       version: "1.0.1",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      compilers: [:elixir_make | Mix.compilers()],
+      make_clean: ["clean"],
     ]
   end
 
@@ -19,6 +21,9 @@ defmodule Pump.MixProject do
   end
 
   defp deps do
-    [{:jason, "~> 1.0"}, {:tesla, "1.0.0"}]
+    [
+      {:elixir_make, "~> 0.4", runtime: false},
+      {:jason, "~> 1.0"}, {:tesla, "1.0.0"}
+    ]
   end
 end
